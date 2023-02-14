@@ -1,7 +1,7 @@
 import Phaser from 'phaser'
 
 const tips = [
-	'Drag the cannon to shoot the ball, match 3 balls with same color to gain score',
+	'Drag the cannon to shoot bubbles, match 3 bubbles with same color to gain score',
 ]
 
 let tipIdx = Phaser.Math.Between(0, tips.length - 1)

@@ -8,10 +8,8 @@ import WebFontFile from '~/ui/WebFontFile'
 
 const DPR = window.devicePixelRatio
 
-export default class Bootstrap extends Phaser.Scene
-{
-	preload()
-	{
+export default class Bootstrap extends Phaser.Scene {
+	preload() {
 		const fonts = new WebFontFile(this.load, [
 			'Nosifer',
 			'Lemon',
@@ -23,36 +21,34 @@ export default class Bootstrap extends Phaser.Scene
 		this.game.events.once(GameEvents.PreloadFinished, this.handlePreloadFinished, this)
 	}
 
-	create()
-	{
+	create() {
 		this.resize()
 
 		this.scene.run(SceneKeys.Preload)
-
+		// this.cameras.main.setBackgroundColor('white');
 		const x = this.scale.width * 0.5
 		const y = this.scale.height * 0.5
 
 		this.add.text(x, y, 'Loading...', {
-			fontFamily: 'Nosifer',
-			fontSize: 24 * DPR
+			fontFamily: 'Arial',
+			fontSize: 40 * DPR,
+			color: 'black',
 		})
 			.setOrigin(0.5, 0.5)
 	}
 
-	private handlePreloadFinished()
-	{
+	private handlePreloadFinished() {
 		this.scene.stop(SceneKeys.Preload)
 		console.log('preload finished')
 
 		this.scene.start(SceneKeys.TitleScreen)
 	}
 
-	private resize()
-    {
+	private resize() {
 		const container = document.getElementById(ElementKeys.ContainerId)!
-        let w = container.clientWidth * window.devicePixelRatio
-        let h = container.clientHeight * window.devicePixelRatio
-		
+		let w = container.clientWidth * window.devicePixelRatio
+		let h = container.clientHeight * window.devicePixelRatio
+
 		this.scale.resize(w, h)
-    }
+	}
 }
