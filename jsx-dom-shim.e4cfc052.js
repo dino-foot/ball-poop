@@ -3,4 +3,4 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{}],"X3Ut":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0;var e=r(require("jsx-dom"));function t(e){if("function"!=typeof WeakMap)return null;var r=new WeakMap,n=new WeakMap;return(t=function(e){return e?n:r})(e)}function r(e,r){if(!r&&e&&e.__esModule)return e;if(null===e||"object"!=typeof e&&"function"!=typeof e)return{default:e};var n=t(r);if(n&&n.has(e))return n.get(e);var o={},u=Object.defineProperty&&Object.getOwnPropertyDescriptor;for(var a in e)if("default"!==a&&Object.prototype.hasOwnProperty.call(e,a)){var f=u?Object.getOwnPropertyDescriptor(e,a):null;f&&(f.get||f.set)?Object.defineProperty(o,a,f):o[a]=e[a]}return o.default=e,n&&n.set(e,o),o}window.React=e;var n=e;exports.default=n;
 },{"jsx-dom":"tyFz"}]},{},["X3Ut"], null)
-//# sourceMappingURL=/jsx-dom-shim.e4cfc052.js.map
+//# sourceMappingURL=/ball-poop/jsx-dom-shim.e4cfc052.js.map
