@@ -7,21 +7,18 @@ import SceneKeys from '~/consts/SceneKeys'
 import SoundEffectsController from '~/game/SoundEffectsController'
 import { Subject } from 'rxjs'
 
-export default class GameOver extends Phaser.Scene
-{
+export default class GameOver extends Phaser.Scene {
 	private sfx?: SoundEffectsController
 	private uiClickSubject = new Subject<void>()
 	private enterSubject = new Subject<void>()
 
-	init()
-	{
+	init() {
 		this.sfx = new SoundEffectsController(this.sound)
 		this.sfx.handleUIClick(this.uiClickSubject.asObservable())
 		this.sfx.handleGameOverEnter(this.enterSubject.asObservable())
 	}
 
-	create()
-	{
+	create() {
 		const width = this.scale.width
 		const height = this.scale.height
 		const x = width * 0.5
@@ -32,15 +29,13 @@ export default class GameOver extends Phaser.Scene
 
 		const fontSize = Math.min(width * 0.15, 225)
 		const title = this.add.text(x, height * 0.4, 'Game\nOver', {
-			fontFamily: 'Nosifer',
+			fontFamily: 'Arial',
 			fontSize,
 			color: '#eb4034',
 			align: 'center',
-			stroke: DarkColor,
-			strokeThickness: 8
 		})
-		.setOrigin(0.5, 0.5)
-		.setScale(0, 0)
+			.setOrigin(0.5, 0.5)
+			.setScale(0, 0)
 
 		const tryAgainBtn = this.add.dom(x, height * 0.6, primaryButton('Try Again'))
 			.setScale(0, 0)
